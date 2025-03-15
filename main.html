@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horizon Suites - Luxury Hotel Management</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        .header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1551882547-ff40c63fe5e3?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 150px 20px;
+            position: relative;
+        }
+
+        .header h1 {
+            font-size: 4rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .header p {
+            font-size: 1.4rem;
+            margin-bottom: 40px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.8;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #2a9d8f, #264653);
+            color: white;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature {
+            text-align: center;
+            padding: 40px;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature i {
+            font-size: 3.5rem;
+            color: #2a9d8f;
+            margin-bottom: 25px;
+        }
+
+        .feature h3 {
+            margin-bottom: 15px;
+            color: #264653;
+            font-size: 1.5rem;
+            font-weight: 600;
+        }
+
+        .feature p {
+            color: #666;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .testimonial {
+            background: linear-gradient(45deg, #264653, #2a9d8f);
+            padding: 100px 20px;
+            text-align: center;
+            color: white;
+        }
+
+        .testimonial blockquote {
+            max-width: 800px;
+            margin: 0 auto 30px;
+            font-style: italic;
+            font-size: 1.4rem;
+            line-height: 1.8;
+        }
+
+        .testimonial p {
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .footer {
+            background-color: #264653;
+            color: white;
+            text-align: center;
+            padding: 30px;
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+            .header p {
+                font-size: 1.1rem;
+            }
+            .features {
+                grid-template-columns: 1fr;
+                padding: 40px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Horizon Suites</h1>
+        <p>Experience unparalleled luxury and comfort with our comprehensive hotel management platform. Streamline operations, enhance guest experiences, and maximize your hotel's potential.</p>
+        <a href="index.html" class="cta-button">Get Started</a>
+    </header>
+
+    <section class="features">
+        <div class="feature">
+            <i class="fas fa-hotel"></i>
+            <h3>Room Management</h3>
+            <p>Efficiently manage room inventory, bookings, and availability with our intuitive interface and real-time updates.</p>
+        </div>
+        <div class="feature">
+            <i class="fas fa-users"></i>
+            <h3>Guest Experience</h3>
+            <p>Create personalized guest profiles and track preferences to deliver exceptional, tailored service every time.</p>
+        </div>
+        <div class="feature">
+            <i class="fas fa-chart-line"></i>
+            <h3>Revenue Optimization</h3>
+            <p>Leverage advanced analytics and data-driven insights to maximize occupancy rates and boost revenue.</p>
+        </div>
+    </section>
+
+    <section class="testimonial">
+        <blockquote>"Horizon Suites has transformed our hotel management. The platform's intuitive design and powerful features have significantly improved our operational efficiency and guest satisfaction."</blockquote>
+        <p>- Ishika Rathor, Hotel Manager</p>
+    </section>
+
+    <footer class="footer">
+        <p>&copy; 2025 Horizon Suites. All rights reserved.</p>
+    </footer>
+</body>
+</html>

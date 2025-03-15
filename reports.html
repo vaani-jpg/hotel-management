@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reports - Horizon Suites</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            color: #2C3E50;
+            min-height: 100vh;
+        }
+
+        .navbar {
+            background: white;
+            padding: 1rem 2rem;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #2C3E50;
+        }
+
+        .logo i {
+            color: #2a9d8f;
+            margin-right: 8px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: #2C3E50;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .nav-links a:hover {
+            color: #2a9d8f;
+        }
+
+        .nav-links i {
+            font-size: 1.2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, #2a9d8f 0%, #264653 100%);
+            border-radius: 15px;
+            color: white;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+        }
+
+        .date-range {
+            margin-top: 1.5rem;
+        }
+
+        .date-range select {
+            padding: 0.8rem 2rem;
+            border-radius: 25px;
+            border: none;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .date-range select:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .date-range select option {
+            background: #2C3E50;
+            color: white;
+        }
+
+        .reports-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .report-card {
+            background: white;
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .report-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .report-card h2 {
+            color: #2C3E50;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .report-data {
+            margin: 1.5rem 0;
+        }
+
+        .report-data p {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.8rem 0;
+            border-bottom: 1px solid #f8f9fa;
+            font-size: 1.1rem;
+            color: #2C3E50;
+        }
+
+        .report-data p:last-child {
+            border-bottom: none;
+        }
+
+        .report-data span {
+            color: #2a9d8f;
+            font-weight: 600;
+            font-size: 1.2rem;
+        }
+
+        .action-button {
+            background: linear-gradient(135deg, #2a9d8f 0%, #264653 100%);
+            color: white;
+            border: none;
+            padding: 0.8rem 2rem;
+            border-radius: 25px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .action-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(42, 157, 143, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .container {
+                padding: 1rem;
+            }
+
+            .header {
+                padding: 2rem 1rem;
+                margin-bottom: 2rem;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .reports-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .report-card {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <i class="fas fa-hotel"></i> Horizon Grand Hotels
+        </div>
+        <div class="nav-links">
+            <a href="index.html"><i class="fas fa-chart-line"></i> Dashboard</a>
+            <a href="booking.html"><i class="fas fa-calendar-check"></i> Bookings</a>
+            <a href="rooms.html"><i class="fas fa-door-open"></i> Rooms</a>
+            <a href="staff.html"><i class="fas fa-users"></i> Staff</a>
+            <a href="reports.html"><i class="fas fa-file-alt"></i> Reports</a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="header">
+            <h1>Performance Analytics</h1>
+            <div class="date-range">
+                <select id="reportPeriod" onchange="updateReports()">
+                    <option value="daily">Daily Report</option>
+                    <option value="weekly">Weekly Report</option>
+                    <option value="monthly" selected>Monthly Report</option>
+                    <option value="yearly">Yearly Report</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="reports-grid">
+            <div class="report-card">
+                <h2>Occupancy Report</h2>
+                <div class="report-data">
+                    <p>Current Occupancy Rate <span id="occupancyRate">85%</span></p>
+                    <p>Available Rooms <span id="availableRooms">15</span></p>
+                    <p>Total Rooms <span id="totalRooms">100</span></p>
+                </div>
+                <button class="action-button" onclick="generateOccupancyReport()">Generate Report</button>
+            </div>
+
+            <div class="report-card">
+                <h2>Revenue Analysis</h2>
+                <div class="report-data">
+                    <p>Total Revenue <span id="totalRevenue">₹12.5L</span></p>
+                    <p>Room Revenue <span id="roomRevenue">₹8.2L</span></p>
+                    <p>F&B Revenue <span id="fnbRevenue">₹4.3L</span></p>
+                </div>
+                <button class="action-button" onclick="generateRevenueReport()">Generate Report</button>
+            </div>
+
+            <div class="report-card">
+                <h2>Guest Demographics</h2>
+                <div class="report-data">
+                    <p>Total Guests <span id="totalGuests">450</span></p>
+                    <p>Average Stay <span id="avgStay">3.2 days</span></p>
+                    <p>Repeat Guests <span id="repeatGuests">35%</span></p>
+                </div>
+                <button class="action-button" onclick="generateDemographicsReport()">Generate Report</button>
+            </div>
+
+            <div class="report-card">
+                <h2>Room Performance</h2>
+                <div class="report-data">
+                    <p>Most Popular <span id="popularRoom">Deluxe</span></p>
+                    <p>Highest Revenue <span id="highestRevenue">Suite</span></p>
+                    <p>Average Rate <span id="avgRate">₹3,500</span></p>
+                </div>
+                <button class="action-button" onclick="generateRoomTypeReport()">Generate Report</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function updateReports() {
+            const period = document.getElementById('reportPeriod').value;
+            const occupancyRates = {
+                daily: '88%',
+                weekly: '85%',
+                monthly: '82%',
+                yearly: '80%'
+            };
+            document.getElementById('occupancyRate').textContent = occupancyRates[period];
+        }
+
+        function generateOccupancyReport() {
+            alert('Generating detailed occupancy report...');
+        }
+
+        function generateRevenueReport() {
+            alert('Generating detailed revenue report...');
+        }
+
+        function generateDemographicsReport() {
+            alert('Generating detailed demographics report...');
+        }
+
+        function generateRoomTypeReport() {
+            alert('Generating detailed room performance report...');
+        }
+    </script>
+</body>
+</html>
